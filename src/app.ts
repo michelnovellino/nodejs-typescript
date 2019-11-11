@@ -12,4 +12,5 @@ app.use(morgan('dev'))
 app.use(express.json())
 
 app.use(AuthRoute)
+
 export default app;

@@ -1,4 +1,5 @@
 import { Request, Response, response } from "express";
+import { googleAuth } from "../utils/google.util"
 import jwt from "jsonwebtoken";
 import User, { IUser, IUserSaved } from "../models/user.model";
 
@@ -53,4 +54,9 @@ export const Profile = async (req: Request, res: Response) => {
     res.json({
         response: user
     })
+}
+
+export const google = async (req: Request, res: Response) => {
+    const data = googleAuth()
+    res.json({ data: data })
 }
